@@ -11,11 +11,11 @@ error_reporting(E_ALL);
 class Conexao
 {
     const USERNAME="root";
-    const PASSWORD="";
+    const PASSWORD="kleiton0103";
     const HOST="127.0.0.1";
     const DB="livros";
 
-    function Conexao(){
+    function __construct(){
 
     }
     public function getConnection(){
