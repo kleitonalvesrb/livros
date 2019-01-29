@@ -1,7 +1,7 @@
 Create database if not exists livros;
 
 CREATE TABLE IF NOT EXISTS usuario (
-  idusuario INT NOT NULL,
+  idusuario INT NOT NULL AUTO_INCREMENT,
   usunome VARCHAR(70) NOT NULL,
   ususenha VARCHAR(32) NOT NULL,
   usulogin VARCHAR(45) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS usuario (
 -- Table mydb.livro
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS livro (
-  idlivro INT NOT NULL,
+  idlivro INT NOT NULL AUTO_INCREMENT,
   isbn VARCHAR(13) NOT NULL,
   nomelivro VARCHAR(100) NOT NULL,
   autorlivro VARCHAR(100) NOT NULL,
@@ -43,3 +43,5 @@ CREATE TABLE IF NOT EXISTS livros_lidos (
     REFERENCES livro (idlivro)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+insert into usuario (usunome,ususenha,usulogin) values('Kleiton Batista','010203','kleitonbatista');

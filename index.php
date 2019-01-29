@@ -1,3 +1,6 @@
 <?php
+require_once 'model/Usuario.php';
 
-echo "ola mundo";
+//$user = new User();
+$usuario = new Usuario();
+$usuario->listar();
