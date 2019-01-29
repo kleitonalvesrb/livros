@@ -94,6 +94,21 @@
 </head>
 <body>
     <h1>Listar Livros Aqui</h1>
+    <table>
+        <thead>
+        <th>ISBN</th>
+        <th>Nome</th>
+        <th>Editora</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <?php
+    require_once "controller/Livro.php";
+    $livro = new Livro();
+    $livro->listaTodosLivros();
+    ?>
 </div>
 </body>
 </html>
