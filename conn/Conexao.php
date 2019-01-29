@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 class Conexao
 {
     const USERNAME="root";
-    const PASSWORD="kleiton0103";
+    const PASSWORD="";
     const HOST="127.0.0.1";
     const DB="livros";
 

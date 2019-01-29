@@ -80,7 +80,6 @@ insert into livro (isbn,nomelivro,autorlivro,editora,genero,paginas,capa) values
 insert into livro (isbn,nomelivro,autorlivro,editora,genero,paginas,capa) values('9572452345324','Core Java','Mariano Rodrigues','Gakken','Didático',546,'caminho');
 insert into livro (isbn,nomelivro,autorlivro,editora,genero,paginas,capa) values('9571234742424','Use a cabeça 2','Cristiano Mendes Alameda','Bonnier','Didático',497,'caminho');
 
-
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(1,1,4,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(1,10,4,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(1,20,3,true);
@@ -125,7 +124,6 @@ insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(3,
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(3,17,4,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(3,13,4,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(3,14,4,true);
-
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(3,11,4,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(4,12,3,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(6,19,4,true);
@@ -148,9 +146,6 @@ insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(5,
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(4,10,1,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(4,5,5,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(3,1,1,true);
-
-
-
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(6,1,1,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(6,2,3,true);
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(6,3,3,true);
