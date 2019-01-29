@@ -16,9 +16,13 @@ class LoginController
 
     }
 
+    private function iniciaSessao($idUsuario,$nomeusuario){
+        session_start();
+        $_SESSION['usuario']['idusuario'] = $idUsuario;
+        $_SESSION['usuario']['nome'] = $nomeusuario;
+    }
     /**
      * @param array $dados
-     * @return bool\
      */
     function realizarLogin($dados = array())
     {
@@ -35,18 +39,19 @@ class LoginController
             if ($rs->rowCount() > 0) {
                 while ($row = $rs->fetch(PDO::FETCH_OBJ)) {
                     if(!empty($row)){
+                        $this->iniciaSessao($row->idusuario,$row->usunome);
                         $retorno = true;
+                        break;
                     }else{
                         $retorno = false;
+                        break;
                     }
                 }
             }
 
         }
         if ($retorno){
-           // echo "<script>window.location.href = 'listaLivros.php';</script>";
             die(header("Location: http://".$_SERVER['HTTP_HOST']."/livros/listaLivros.php"));
         }
-////        return $retorno;
     }
 }

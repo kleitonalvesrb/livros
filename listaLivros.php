@@ -1,11 +1,23 @@
  <?php
-require_once "controller/Livro.php";?>
+ if(isset($_REQUEST['acao'])){
+    session_unset();
+    session_destroy();
+//    header("Location: http://".$_SERVER['HTTP_HOST']."");
+     echo "<script>window.location.href = 'http://localhost:8888/livros/index.php';</script>";
+    die;
+
+ }
+ session_start();
+
+ require_once "controller/Livro.php";
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT">
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
     <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
@@ -18,6 +30,10 @@ require_once "controller/Livro.php";?>
             color: #fff;
             background: #d47677;
         }
+        li {
+            list-style-type: none;
+            padding-right: 10px;
+        }
     </style>
 </head>
 <body id="page-top">
@@ -25,13 +41,11 @@ require_once "controller/Livro.php";?>
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
     <a class="navbar-brand mr-1" href="listaLivros.php">Esse eu já lí!</a>
     <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <div class="input-group">
-            <!--<input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">-->
-        </div>
+    <form id="logout" method="post" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <input type="hidden" id="acao" name="acao" value="logout">
     </form>
-
-    <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+    <li><?php echo $_SESSION['usuario']['nome']?></li>
+    <li onclick="logout();"><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
 </nav>
 </body>
 <p>
@@ -40,33 +54,22 @@ require_once "controller/Livro.php";?>
     <div class="title">
         <h3>Images</h3>
     </div>
-    <input type="text" class="">
+    <form method="get">
+        <input type="text" class="col-md-4" name="pesquisar">
+        <input type="submit" value="Pesquisar" class="btn btn-primary">
+    </form>
     <div class="row">
         <?php
         $livros = new Livro();
-        echo $livros->listaTodosLivros();
+        echo $livros->listaTodosLivros($_GET);
         ?>
 
 
     </div>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </body>
 </html>
+ <script>
+     function logout(){
+        $("#logout").submit();
+     }
+ </script>
