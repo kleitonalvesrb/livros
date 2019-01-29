@@ -16,6 +16,16 @@ class Livro
     {
     }
     public function listaTodosLivros(){
+        $html = "
+        <div class='row'>
+           <div class='col-md-offset-2 col-md-8'>
+        <table class=\"table table-bordered\">
+        <thead>
+        <th class='text-center'>ISBN</th>
+        <th class='text-center'>Nome</th>
+        <th class='text-center'>Editora</th>
+        </thead>
+        <tbody>";
         $conexao = new Conexao();
         $conn = $conexao->getConnection();
         $stmt = $conn->prepare("select * from livro");
@@ -25,10 +35,23 @@ class Livro
             exit;
         }
         while ($linha = $stmt->fetch(PDO::FETCH_OBJ)) {
-            echo $linha->idlivro . " - ";
-            echo $linha->nomelivro . " - ";
-            echo $linha->isbn . "<br>";
+            $html .= "<tr>";
+            $html .= "<td>" . $linha->isbn . "</td>";
+            $html .= "<td>" . $linha->nomelivro . "</td>";
+            $html .= "<td>" . $linha->editora . "</td>";
+            $html .= "</tr>";
         }
+
+        $html .= " <tr>
+                <td>1134124</td>
+                <td>Teste</td>
+                <td>Editora</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>";
+        return $html;
 
     }
 }
