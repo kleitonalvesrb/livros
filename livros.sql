@@ -59,6 +59,8 @@ insert into usuario (usunome,ususenha,usulogin) values('Maria Carolina','123456'
 insert into usuario (usunome,ususenha,usulogin) values('Humberto Dias','123456','Bertin');
 insert into usuario (usunome,ususenha,usulogin) values('Leonardo Souza','123456','Leo');
 
+
+
 insert into livro (isbn,nomelivro,autorlivro,editora,genero,paginas,capa) values('9571234783947','Use a cabeça','Deitel','Livre','Didático',546,'caminho');
 insert into livro (isbn,nomelivro,autorlivro,editora,genero,paginas,capa) values('2423423423413','A sutil arde de ligar o f*da-se','Fonseca Guilherme','Pearson','Auto Ajuda',445,'caminho');
 insert into livro (isbn,nomelivro,autorlivro,editora,genero,paginas,capa) values('9574454232456','João e Maria','Amadeu Dutra Moresi','Grupo planeta','infantil',56,'caminho');
@@ -152,3 +154,28 @@ insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(6,
 insert into livros_lidos (usuario_idusuario,livro_idlivro,nota,status) values(6,10,3,true);
 
 
+UPDATE livro set capa = 'use_a_cabeca.jpg' where idlivro = 1;
+UPDATE livro set capa = 'arte.jpg' where idlivro = 2;
+UPDATE livro set capa = 'joaoemaria.jpg' where idlivro = 3;
+UPDATE livro set capa = 'crepusculo.jpg' where idlivro = 4;
+UPDATE livro set capa = '3096.jpg' where idlivro = 5;
+UPDATE livro set capa = 'ultimanoite.jpg' where idlivro = 6;
+UPDATE livro set capa = '500dias.jpg' where idlivro = 7;
+UPDATE livro set capa = 'livros.jpg' where idlivro = 8;
+UPDATE livro set capa = 'davinci.jpg' where idlivro = 9;
+UPDATE livro set capa = 'alibaba.jpg' where idlivro = 10;
+UPDATE livro set capa = 'devolta.jpg' where idlivro = 11;
+UPDATE livro set capa = 'acabou.jpg' where idlivro = 12;
+UPDATE livro set capa = 'pegaavisao.jpg' where idlivro = 13;
+UPDATE livro set capa = 'original.jpg' where idlivro = 14;
+UPDATE livro set capa = 'vida.jpg' where idlivro = 15;
+UPDATE livro set capa = 'deonde.jpg' where idlivro = 16;
+UPDATE livro set capa = 'sapinho.jpg' where idlivro = 17;
+UPDATE livro set capa = 'pense.jpg' where idlivro = 18;
+UPDATE livro set capa = 'core.jpg' where idlivro = 19;
+UPDATE livro set capa = 'useacabeca2.jpg' where idlivro = 20;
+update livro set nomelivro = '3096 dias de cativeiro' where idlivro = 5;
+update livro set nomelivro = 'Pega a Visão' where idlivro = 14;
+
+
+update livro set nomelivro = 'A sutil arte de ligar o f*da-se' where idlivro = 2;
