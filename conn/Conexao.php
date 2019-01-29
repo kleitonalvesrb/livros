@@ -39,7 +39,7 @@ class Conexao
             exit;
         }
         while ($linha = $stmt->fetch(PDO::FETCH_OBJ)) {
-            echo $linha->usunome;
+            echo $linha->usunome . "<br>";
         }
 
     }
